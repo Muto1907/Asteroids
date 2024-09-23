@@ -35,6 +35,10 @@ def main():
 			if thing.check_collision(player):
 				print("Game over!")
 				sys.exit()
+			for bullet in shots:
+				if thing.check_collision(bullet):
+					thing.split()
+					bullet.kill()
 	print("Starting asteroids!")
 	print(f"Screen width: {SCREEN_WIDTH}")
 	print(f"Screen height: {SCREEN_HEIGHT}")
